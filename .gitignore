@@ -1,0 +1,7 @@
+nginx/previous.conf
+.env
+.env.*
+!.env.example
+nginx/previous.conf
+node_modules/
+.vagrant/

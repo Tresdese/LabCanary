@@ -1,0 +1,32 @@
+services:
+  blue:
+    image: canary-lab:v1
+    build:
+      context: ./app
+      args:
+        RELEASE_VERSION: v1
+    environment:
+      SIMULATE_ERROR: "false"
+    networks: [canary]
+    restart: unless-stopped
+  green:
+    image: canary-lab:v2
+    build:
+      context: ./app
+      args:
+        RELEASE_VERSION: v2
+    environment:
+      SIMULATE_ERROR: "${GREEN_FAIL:-false}"
+    networks: [canary]
+    restart: unless-stopped
+  proxy:
+    image: nginx:1.27-alpine
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    volumes:
+      - ./nginx/active.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [blue, green]
+    networks: [canary]
+    restart: unless-stopped
+networks:
+  canary:

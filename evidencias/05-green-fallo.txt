@@ -1,0 +1,2 @@
+/health HTTP 200 {"status":"ok","version":"v2"}
+/api/checkout HTTP 503 {"error":"simulated checkout failure","version":"v2"}
