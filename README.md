@@ -207,14 +207,6 @@ La ejecución se consulta en la pestaña **Actions** del repositorio. El workflo
 
 La presencia de ambas versiones no demuestra una proporción exacta de tráfico. El workflow tampoco sustituye las pruebas funcionales del incidente.
 
-## Evidencias
-
-Las salidas de las pruebas se encuentran en la carpeta [evidencias](evidencias/).
-
-La reflexión técnica se encuentra en [REFLEXION.md](REFLEXION.md).
-
-Las capturas documentan el inicio de los servicios, las distribuciones, el fallo funcional y el rollback. La evidencia de GitHub Actions debe corresponder a una ejecución real del repositorio.
-
 ## Diagnóstico y cierre
 
 ```bash
@@ -229,10 +221,3 @@ Para detener y retirar los contenedores del laboratorio:
 docker compose down
 ```
 
-## Fuente del proyecto
-
-Código base proporcionado para la asignatura:
-
-https://github.com/sdominguez/deployment-strategies/tree/master/demo_canary/canary_lab
-
-No se incluyen credenciales, llaves privadas ni el archivo `.env` en el repositorio.
